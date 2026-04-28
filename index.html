@@ -300,7 +300,13 @@
         .seals {
             background: var(--bg-light);
             border-bottom: 1px solid #eee;
-            padding: 80px 0;
+            padding: 40px 0;
+        }
+
+        @media (min-width: 768px) {
+            .seals {
+                padding: 60px 0;
+            }
         }
 
         .seals-grid {
@@ -326,8 +332,14 @@
 
         /* Sections */
         section {
-            padding: 220px 0;
+            padding: 100px 0;
             position: relative;
+        }
+
+        @media (min-width: 992px) {
+            section {
+                padding: 160px 0;
+            }
         }
 
         #lookbook {
@@ -348,8 +360,15 @@
 
         .section-header {
             text-align: center;
-            margin-top: 60px;
-            margin-bottom: 140px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .section-header {
+                margin-top: 60px;
+                margin-bottom: 100px;
+            }
         }
 
         .section-header p.sub {
@@ -362,7 +381,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
             margin-bottom: 20px;
             font-style: italic;
         }
@@ -374,19 +393,10 @@
             font-size: 1.1rem;
         }
 
-        /* Elegant Lookbook Gallery */
         .lookbook {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        @media (min-width: 768px) {
-            .lookbook {
-                grid-template-columns: repeat(6, 1fr);
-                grid-auto-rows: 180px;
-                gap: 15px;
-            }
+            gap: 6px;
         }
 
         .lookbook-item {
@@ -395,6 +405,18 @@
             background: #eee;
             border-radius: 4px;
             cursor: pointer;
+            aspect-ratio: 1 / 1;
+        }
+
+        @media (min-width: 768px) {
+            .lookbook {
+                grid-template-columns: repeat(6, 1fr);
+                grid-auto-rows: 180px;
+                gap: 15px;
+            }
+            .lookbook-item {
+                aspect-ratio: unset;
+            }
         }
 
 
@@ -479,8 +501,8 @@
         }
 
         .esencia-text p {
-            margin-bottom: 25px;
-            font-size: 1.15rem;
+            margin-bottom: 20px;
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
             color: var(--text-light);
         }
 
@@ -504,13 +526,21 @@
         /* Floating Actions */
         .floating {
             position: fixed;
-            bottom: 35px;
-            right: 35px;
+            bottom: 20px;
+            right: 16px;
             z-index: 2000;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 14px;
             align-items: flex-end;
+        }
+
+        @media (min-width: 768px) {
+            .floating {
+                bottom: 35px;
+                right: 35px;
+                gap: 20px;
+            }
         }
 
         .float-btn {
@@ -544,8 +574,8 @@
         }
 
         .float-icon {
-            width: 60px;
-            height: 60px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -553,6 +583,13 @@
             color: white;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             transition: var(--transition);
+        }
+
+        @media (min-width: 768px) {
+            .float-icon {
+                width: 60px;
+                height: 60px;
+            }
         }
 
         .float-btn:hover .float-icon {
@@ -577,8 +614,14 @@
         footer {
             background: var(--black);
             color: var(--white);
-            padding: 100px 0 50px;
+            padding: 60px 0 40px;
             text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            footer {
+                padding: 100px 0 50px;
+            }
         }
 
         .footer-logo img {
@@ -779,7 +822,7 @@
     </section>
 
     <!-- Proceso -->
-    <section id="proceso" class="container" style="padding-bottom: 120px;">
+    <section id="proceso" class="container" style="padding-bottom: 80px;">
         <div class="section-header reveal">
             <p class="sub">El Ritual</p>
             <h2>¿Cómo pedir tu Mandala?</h2>
